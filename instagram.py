@@ -40,31 +40,11 @@ def login():
     print("Logging into Instagram")
     driver.find_element_by_class_name("sqdOP").click()
     username = driver.find_element_by_name("username")
-    username.send_keys("h")
-    username.send_keys("i")
-    username.send_keys("_")
-    username.send_keys("i")
-    username.send_keys("m")
-    username.send_keys("w")
-    username.send_keys("e")
-    username.send_keys("s")
+    username.send_keys("")
     sleep(3)
     password = driver.find_element_by_name("password")
-    password.send_keys("Y")
-    password.send_keys("o")
-    password.send_keys("u")
-    password.send_keys("O")
-    password.send_keys("n")
-    password.send_keys("l")
-    password.send_keys("y")
-    password.send_keys("l")
-    password.send_keys("i")
-    password.send_keys("v")
-    password.send_keys("e")
-    password.send_keys("1")
-    password.send_keys("c")
-    password.send_keys("e", Keys.ENTER)
-    # password.send_keys(Keys.RETURN)
+    password.send_keys("", Keys.ENTER)
+    # password.send_keys(Keys.RETURN) for Mac users
     sleep(3)
     # driver.find_element_by_xpath("//a[contains(text(),'Not now')]").click()
 
@@ -82,29 +62,6 @@ def remove_popups():
                 pass
 
 
-# def upload_file(self, filename):
-#     path = os.path.join(
-#         os.path.realpath('.'),
-#         'fixtures',
-#         filename
-#     )
-#     assert os.path.exists(path)
-
-#     for i in range(10):
-#         app = Application()
-#         app.connect(process=self.get_pid())  # connect to browser
-#         dialog = app.top_window_()           # get active top window (Open dialog)
-#         if not dialog.Edit.Exists():         # check if Edit field is exists
-#             sleep(1)                    # if no do again in 1 second (waiting for dialog after click)
-#             continue
-#         dialog.Edit.TypeKeys('"{}"'.format(path))   # put file path
-#         dialog['&OpenButton'].Click()               # click Open button
-
-#         return
-
-#     raise Exception('"Open File" dialog not found')
-
-
 def post():
     print("Posting your trials")
     sleep(2)
@@ -112,15 +69,7 @@ def post():
     sleep(7)
     remove_popups()
     sleep(3)
-    # upload_file()
 
-# def postM():
-#     app = Application().connect(title_re="File Upload")
-#     app.FileUpload.Edit.SetText("test.jpg")
-#     sleep(1.5369)
-
-#     app.FileUpload.Button.click()
-#     app.FileUpload.Button.click()
 
 launch_inst()
 login()
